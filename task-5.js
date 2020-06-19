@@ -7,18 +7,17 @@ const products = [
 
 const getAllPropValues = function(arr, prop) {
 
-  const array = [];
+  const arrayOfValues = [];
 
-  for(let ar of arr) {
+  for (const objects of arr) {
+    if (prop in objects) {
+    arrayOfValues.push(objects[prop])
+    };
+  };
 
-    if (Object.keys(ar).includes(prop)) {
-      array.push(ar[prop])
-    }
-  }
+  return arrayOfValues;
 
-return array;
 };
-
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */

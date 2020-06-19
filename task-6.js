@@ -8,15 +8,21 @@ const products = [
 const calculateTotalPrice = function(allProdcuts, productName) {
 
     let total;
+    
 
-    for(let product of allProdcuts) {
-        if(product.name.includes(productName)){
-            total = product.price * product.quantity;
+    for (let objects of allProdcuts) {
+
+         for (let key in objects) {
+
+             if (objects[key] === productName){
+                
+                total = objects.price * objects.quantity;
+                
+             };
         };
-    }; 
+    };
 
     return total;
- 
 };
   /*
    * Вызовы функции для проверки работоспособности твоей реализации.
